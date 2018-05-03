@@ -9,6 +9,7 @@ import basicAuth from 'basic-auth'
 import config from 'config'
 import passport from 'passport'
 import { Strategy } from 'passport-nest'
+import cookieParser from 'cookie-parser'
 
 const app = express()
 
@@ -56,6 +57,7 @@ if (config.isDev) {
 	});
 }
 
+app.use(cookieParser(SUPER_SECRET_KEY));
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
