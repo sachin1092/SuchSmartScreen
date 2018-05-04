@@ -51,8 +51,8 @@ export default (router) => {
         console.log(req.user.accessToken);
 //        return res.json({ status: 'success', data: req.user.accessToken })
 //        res.cookie('nest_token', req.user.accessToken);
-//        res.redirect('/');
-        startStreaming(req.user.accessToken);
+        res.redirect('/dashboard');
+//        startStreaming(req.user.accessToken);
 
     });
 

@@ -73,6 +73,29 @@ app.use(passport.session());
 // route requests to controllers
 app.use(enrouten({ directory: 'controllers' }))
 
+// serve the client ui and forward certain paths to react
+app.use(express.static(__dirname + '/client'));
+
+const _forward_to_react = (req, res) => {
+    res.sendFile(__dirname + '/client/index.html');
+};
+
+app.use('/admin', (req, res, next) => {
+
+    const user = basicAuth(req);
+
+    if(user && user.name == process.env.ADMIN_USER && user.pass == process.env.ADMIN_PASS) {
+        return next();
+    }
+
+    res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+    return res.sendStatus(401);
+})
+
+app.get('/dashboard', _forward_to_react);
+app.get('/admin', _forward_to_react);
+app.get('/favicon.ico', _forward_to_react);
+
 // handle 404s
 app.use((req, res, next) => { console.log("error:", __filename, "LINE_N", "404:", req.url); res.status(404).send();})
 

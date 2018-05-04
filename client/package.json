@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "debug": "node server.js",
-    "build": "NODE_ENV=production BABEL_ENV=production webpack -p --config webpack.config.js; cp favicon.png build/favicon.png"
+    "build": "NODE_ENV=production BABEL_ENV=production webpack -p --config webpack.config.js;"
   },
   "author": "Sachin Shinde",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "path": "^0.12.7",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.3.1",
+    "react-cookie": "^2.1.4",
     "react-dom": "^15.6.1",
     "react-icons": "^2.2.5",
     "react-motion": "^0.5.1",
@@ -45,11 +46,16 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.12.2"
+    "webpack-hot-middleware": "^2.12.2",
+    "passport": "^0.2.2",
+    "passport-nest": "^1.0.0",
+    "cookie-parser": "^1.3.5",
+    "eventsource": "^0.1.6",
+    "react-cookie": "^2.1.4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sachin1092/sachin1092.github.io"
+    "url": "https://github.com/sachin1092/SuchSmartScreen.git"
   },
   "babel": {
     "presets": [
