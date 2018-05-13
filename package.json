@@ -2,7 +2,7 @@
   "name": "SuchSmartScreen",
   "version": "1.0.0",
   "description": "Dashboard for smart devices",
-  "private": "true",
+  "private": true,
   "main": "index.js",
   "engines": {
     "node": "6.10.0"
